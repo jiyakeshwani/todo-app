@@ -45,6 +45,10 @@ table {
 body{
     background-color: rgb(1, 1, 19);
 }
+
+html{
+  font-size: 16px;  
+}
 .container{
     max-width: 800px;
     margin: 0 auto;
@@ -135,4 +139,102 @@ h1{
 .todo:hover{
     background-color: rgb(3, 3, 73);
     color: lightblue;
+}
+@media screen  and (max-width : 600px){
+    html{
+        font-size: 13px;
+    }
+    .container{
+      max-width: 550px;
+    }
+    
+}
+@media screen  and (max-width : 768px){
+    html{
+        font-size: 14px;
+    }
+    .container{
+      max-width: 700px;
+    }
+    
+}
+
+@media screen  and (max-width : 500px){
+    html{
+        font-size: 12px;
+    }
+    .container{
+      max-width: 450px;
+    }
+    
+}
+
+@media screen  and (max-width : 400px){
+    html{
+        font-size: 11px;
+    }
+    .container{
+      max-width: 300px;
+    }
+     h1{
+        text-align: center;
+     }
+     .addtodo{
+        width: 30%;
+        background-color: rgb(1, 1, 19);
+        border: 0;
+        margin-right: 10rem;
+     }
+    .todo{
+        width: 125%;
+    }
+    
+}
+
+@media screen  and (max-width : 350px){
+    html{
+        font-size: 10px;
+    }
+    .container{
+      max-width: 270px;
+      
+    }
+    h1{
+        text-align: center;
+     }
+
+     .addtodo{
+        width: 25%;
+        background-color: rgb(1, 1, 19);
+        border: 0;
+        margin-right: 15rem;
+     }
+    .todo{
+        width: 120%;
+    }
+    
+}
+
+@media screen  and (max-width : 300px){
+    html{
+        font-size: 10px;
+    }
+    .container{
+      max-width: 200px;
+      
+    }
+    h1{
+        text-align: center;
+     }
+
+     .addtodo{
+        width: 25%;
+        background-color: rgb(1, 1, 19);
+        border: 0;
+        margin-right: 15rem;
+     }
+    .todo{
+        width: 120%;
+    }
+    
 }

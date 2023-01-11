@@ -21,14 +21,17 @@ export const editTodos = (payload) => {
     payload,
   };
 };
-export const handleCheck = () => {
+export const handleCheck = (payload) => {
   return {
     type: "check",
+    payload,
   };
 };
 
-export const editSubmit = () => {
-    return {
-      type: "edit_todo_submit",
-    };
+export const editSubmit = (id, payload) => {
+  return {
+    type: "edit_todo_submit",
+    id,
+    payload,
   };
+};

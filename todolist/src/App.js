@@ -1,17 +1,14 @@
-import React, { useState, useEffect } from "react";
-import { useSelector, useDispatch, connect } from "react-redux";
+import React, { useState } from "react";
+import { useDispatch, connect } from "react-redux";
 import TodoList from "./components/TodoList";
 import { Connect } from "react-redux";
-import { addTodo, deleteTodo, editTodos, editSubmit } from "./store/action";
-import update from "react-addons-update";
-
+import { addTodo, editSubmit, handleCheck } from "./store/action";
 
 function App(props) {
   let [todoInput, setTodoInput] = useState("");
   let [editTodo, setEditTodo] = useState("");
   let [addBtn, setAddBtn] = useState(true);
   let [filter, setFilter] = useState("All");
-  let [editValue, setEditValue] = useState("");
 
   const dispatch = useDispatch();
 
@@ -19,22 +16,21 @@ function App(props) {
     if (!todoInput) {
       alert("Enter a todo please");
     } else if (todoInput && !addBtn) {
-      props.todos.map((todo) => {
-        if (todo.id === editTodo) {
-          console.log(todo.todo);
-          console.log(todoInput);
-          return update(todo ,{
-            
-          })
-        }
-        return todo;
-      });
+      if (editTodo) {
+        dispatch(editSubmit(editTodo, { todo: todoInput }));
+        setAddBtn(true);
+        setTodoInput("");
+        setEditTodo("");
+      }
     } else {
       dispatch(addTodo(todoInput));
       setTodoInput("");
     }
   };
 
+  function handleCheckBox(id) {
+    dispatch(handleCheck(id));
+  }
   return (
     <>
       <div className="container flex center column">
@@ -55,30 +51,13 @@ function App(props) {
         </div>
         <TodoList
           todoInput={todoInput}
+          filter={filter}
+          setFilter={setFilter}
           setAddBtn={setAddBtn}
           setTodoInput={setTodoInput}
           setEditTodo={setEditTodo}
+          handleCheckBox={handleCheckBox}
         />
-        <div className="filters flex space-btw">
-          <button
-            name="Active"
-            className={filter === "Active" ? "active-class" : "filter-btn"}
-          >
-            Active
-          </button>
-          <button
-            name="Completed"
-            className={filter === "Completed" ? "active-class" : "filter-btn"}
-          >
-            Completed
-          </button>
-          <button
-            name="All"
-            className={filter === "All" ? "active-class" : "filter-btn"}
-          >
-            All
-          </button>
-        </div>
       </div>
     </>
   );
