@@ -1,0 +1,138 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+body{
+    background-color: rgb(1, 1, 19);
+}
+.container{
+    max-width: 800px;
+    margin: 0 auto;
+    width: 100%;
+   padding-top: 5rem ;
+}
+.flex{
+    display: flex;
+}
+
+.space-btw{
+    justify-content: space-between;
+}
+.center{
+    justify-content: center;
+    align-items: center;
+}
+.column{
+    flex-direction: column;
+}
+
+h1{
+    color: white;
+    font-size: 3rem;
+    font-weight: 800;
+}
+
+.addtodo{
+    background-color: white;
+    margin-top: 2rem;
+    border: 3px solid gray;
+    padding: 0.7rem ;
+    border-radius: 5px;
+    width: 50%;
+}
+
+.addtodo input{
+    border: none;
+    outline: none;
+}
+
+.addtodo button{
+    border: none;
+    background-color: white;
+}
+
+.filters{
+    margin-top: 2rem;
+}
+
+.filter-btn{
+    background-color: #f1dac4;
+    border: 2px solid rgb(3, 3, 73);
+    margin-left: 1.5rem;
+    color: rgb(3, 3, 73);
+    padding: 0.6rem 1rem;
+    font-size: 1.1rem;
+    border-radius: 5px;
+}
+.active-class{
+    background-color: rgb(3, 3, 73);
+    color: #caa98a;
+    border: 2px solid #caa98a;
+    margin-left: 1.5rem;
+    padding: 0.6rem;
+    font-size: 1.1rem;
+    border-radius: 5px;
+}
+.todo{
+    background-color: lightblue;
+    color: rgb(1, 1, 19);
+    margin: 1rem 0;
+    padding: 0.6rem;
+ width: 200%;
+ border: 2px solid white;
+ border-radius: 10px;
+}
+.todo button{
+    border: 0;
+    background-color: transparent;
+    
+}
+.todo p{
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-left: 0.6rem;
+}
+.todo:hover{
+    background-color: rgb(3, 3, 73);
+    color: lightblue;
+}
